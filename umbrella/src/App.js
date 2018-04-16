@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import Header from './Components/Header.js'
+import Footer from './Components/Footer.js'
 import './Assets/Stylesheets/App.css';
+import TimesContainer from './Components/TimesContainer.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={'https://thumbs.gfycat.com/SharpCalculatingIslandwhistler-size_restricted.gif'} className='App__gif--rain'/>
-          <h1 className="App-title"> 8C </h1>
-        </header>
+        <Header />
+        <TimesContainer />
+        <Footer />
       </div>
     );
   }
