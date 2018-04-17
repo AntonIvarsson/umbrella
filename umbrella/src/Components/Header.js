@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import Clock from 'react-live-clock';
 import axios from 'axios';
 import TimesContainer from './TimesContainer.js';
+import sun__light__cloud from  '../Assets/Res/Icons/Piskelclear.gif'
 
 import '../Assets/Stylesheets/App.css';
+const test = 'https://piskel-imgstore-b.appspot.com/img/a20656d7-4215-11e8-840c-bfe4a4aff865.gif'
+
 
 const URL = 'http://api.openweathermap.org/data/2.5/weather?q=Stockholm&appid=9743140833919d56c2c140b9c34016f5&units=metric';
 
@@ -38,12 +41,14 @@ class Header extends Component {
     return (
       <div>
         <header className='App-header'>
-          <p> Mot TC: </p>
-          <Clock format={'HH:mm'} ticking={true} timezone={'Europe/Stockholm'} />
+          <TimesContainer />
+          <Clock className='clock'format={'HH:mm'} ticking={true} timezone={'Europe/Stockholm'} />
+          <div>
           <div className='Header__temperature__gif--group'>
-          <p> {this.state.temp} °C </p>
           <img className = 'App__gif--rain'
-          src={'https://static1.squarespace.com/static/5394702fe4b092dc8ae3d015/539c77b2e4b05219d5bd8b95/53b1805fe4b0732f8676875d/1404141706865/cloud.gifformat=1000w'}/> 
+          src={test}/> 
+          <p className='temp'> {this.state.temp}°C </p>
+          </div>
           </div>
         </header>
       </div>

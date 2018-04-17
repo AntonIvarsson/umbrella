@@ -1,29 +1,60 @@
+@font-face{
+  font-family: Gatsby-bold;
+  src: url('../Res/Fonts/GatsbyFLF-Bold.ttf')
+  }
+@font-face{
+  font-family: Noir;
+  src: url('../Res/Fonts/NoirStd-Regular.ttf')
+  }
+@font-face{
+  font-family: Monacco;
+  src: url('../Res/Fonts/Monaco.dfont')
+  }
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
-  height: 775px;
+  height: 1200px;
 }
+p {  
+  margin: 0px;
+}
+
 .App-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .App-footer {
   text-align: center;
 }
 
+.clock {
+font-size: 200px;
+font-family: Gatsby-bold;
+}
+
+.temp {
+  font-size: 120px;
+  font-family: Gatsby-bold;
+}
+.bussTimes {
+  font-size: 80px;
+  font-family: Noir;
+}
+
 .Header__temperature__gif--group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .App__gif--rain {
   margin-left: 15px;
-  height: 30px;
+  height: 256px;
 }
 

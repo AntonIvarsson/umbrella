@@ -1,6 +1,20 @@
+@font-face{
+font-family: Noir;
+src: url('../Res/Fonts/NoirStd-Regular.ttf')
+}
+@font-face{
+font-family: Gatsby;
+src: url('../Res/Fonts/GatsbyFLF.ttf')
+}
+@font-face{
+font-family: Gatsby-bold;
+src: url('../Res/Fonts/GatsbyFLF-Bold.ttf')
+}
+  
 body {
-  font-family: sans-serif;
+  font-family: Helvetica;
   background-color: #222;
-  font-size: 60px;
+  font-size: 70px;
   color: white;
+  margin: 0px;
 }

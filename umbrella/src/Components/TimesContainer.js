@@ -47,9 +47,10 @@ class TimesContainer extends Component {
   }
 
   render() {
-    const listItems = this.state.departures.map((d) => <p key={d}>{d} </p>);
+    const listItems = this.state.departures.map((d) => <p className='bussTimes' key={d}>{d} </p>);
     return (
       <div>
+        <p className='bussTimes'> Mot TC: </p>
         {listItems}
       </div>
     );
