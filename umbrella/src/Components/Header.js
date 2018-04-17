@@ -2,11 +2,33 @@ import React, { Component } from 'react';
 import Clock from 'react-live-clock';
 import axios from 'axios';
 import TimesContainer from './TimesContainer.js';
-import sun__light__cloud from  '../Assets/Res/Icons/Piskelclear.gif'
+import ReactSVG from 'react-svg'
 
 import '../Assets/Stylesheets/App.css';
-const test = 'https://piskel-imgstore-b.appspot.com/img/a20656d7-4215-11e8-840c-bfe4a4aff865.gif'
+import '../Assets/Stylesheets/dxcweathericons.css'; 
+import '../Assets/Stylesheets/styles.css';
 
+import Clearnight from '../Assets/Res/Icons/images/clearNightIcon.svg'
+
+
+const weatherIcons = {
+  clearNight: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/clearNightIcon.svg'),
+  lightning: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/lightningIcon.svg'),
+  mostlyCloudy: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/mostlyCloudyIcon.svg'),
+  partlyCloudy: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/partlyCloudyIcon.svg'),
+  partlyCloudyNight: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/partlyCloudyNightIcon.svg'),
+  rainy: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/rainyIcon.svg'),
+  showers: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/showersIcon.svg'),
+  snowShowers: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/snowShowersIcon.svg'),
+  900: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/sunnyShowersIcon.svg'),
+  1000: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/thermometerColdIcon.svg'),
+  1100: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/thermometerHotIcon.svg'),
+  1200: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/thundershowersIcon.svg'),
+  1300: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/windyIcon.svg'),
+  1400: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/windySunnyIcon.svg'),
+  1500: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/sunnyIcon.svg'),
+  1600: require('/Users/antonivarsson/Documents/umbrella/umbrella/src/Assets/Res/Icons/images/snowyIcon.svg')
+}
 
 const URL = 'http://api.openweathermap.org/data/2.5/weather?q=Stockholm&appid=9743140833919d56c2c140b9c34016f5&units=metric';
 
@@ -20,6 +42,10 @@ class Header extends Component {
     };
   }
 
+  componentDidMount () {
+      
+  }
+
   componentWillMount(){
     this.getWeather();
     setInterval(() => {
@@ -30,11 +56,15 @@ class Header extends Component {
   async getWeather() {
     try {
       const response = await axios.get(URL);
-      console.log(response.data)
+      console.log(response.data.weather[0].id)
       this.setState({ temp: Math.round(response.data.main.temp)})
     } catch (error) {
       console.error(error);
     }
+  }
+
+  getWeatherKey(){
+
   }
 
   render() {
@@ -43,12 +73,12 @@ class Header extends Component {
         <header className='App-header'>
           <TimesContainer />
           <Clock className='clock'format={'HH:mm'} ticking={true} timezone={'Europe/Stockholm'} />
-          <div>
           <div className='Header__temperature__gif--group'>
-          <img className = 'App__gif--rain'
-          src={test}/> 
+          <img src={weatherIcons.partlyCloudy} className='App__gif--rain'/>
+    
+
+
           <p className='temp'> {this.state.temp}°C </p>
-          </div>
           </div>
         </header>
       </div>

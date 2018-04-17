@@ -10,6 +10,10 @@
   font-family: Monacco;
   src: url('../Res/Fonts/Monaco.dfont')
   }
+@font-face{
+  font-family: AMTR;
+  src: url('../Res/Fonts/AMTRRegular.ttf')
+  }
 
 .App {
   display: flex;
@@ -38,12 +42,16 @@ font-family: Gatsby-bold;
 }
 
 .temp {
-  font-size: 120px;
-  font-family: Gatsby-bold;
+  font-size: 100px;
+  font-family: AMTR;
 }
 .bussTimes {
   font-size: 80px;
-  font-family: Noir;
+  font-family: AMTR;
+}
+.bussHeader {
+  font-size: 80px;
+  font-family: AMTR;
 }
 
 .Header__temperature__gif--group {

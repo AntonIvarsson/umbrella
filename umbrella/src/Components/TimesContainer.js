@@ -29,7 +29,7 @@ class TimesContainer extends Component {
       this.setState({ departures: next })
      }
   }
-
+  
   componentWillMount(){
     this.getTimes();
     setInterval(() => {
@@ -50,7 +50,7 @@ class TimesContainer extends Component {
     const listItems = this.state.departures.map((d) => <p className='bussTimes' key={d}>{d} </p>);
     return (
       <div>
-        <p className='bussTimes'> Mot TC: </p>
+        <p className='bussHeader'> Norrut: </p>
         {listItems}
       </div>
     );

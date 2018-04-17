@@ -34,7 +34,7 @@ class Footer extends Component {
     return (
       <div>
         <header className='App-footer'>
-        <p> { this.state.compliment } - Anton </p>
+        <p className='bussTimes'> { this.state.compliment } - Anton </p>
         </header>
       </div>
     );
