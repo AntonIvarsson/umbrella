@@ -5,8 +5,6 @@ import '../Assets/Stylesheets/App.css';
 
 const URL = 'https://api.resrobot.se/v2/departureBoard?key=f0d475cd-812c-44ec-b57e-ad664c890b5c&id=740021708&direction=740020755&maxJourneys=5&products=32&format=json';
 
-const COMPLIMENT = ' https://compliment-api.herokuapp.com/'
-
 class TimesContainer extends Component {
 
   constructor(props) {
@@ -35,6 +33,9 @@ class TimesContainer extends Component {
     setInterval(() => {
       this.filterBussTimes();
     },1000)
+    setInterval(() => {
+      this.getTimes();
+    },6000000)
   }
 
   getTimes() {

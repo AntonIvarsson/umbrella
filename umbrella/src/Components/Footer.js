@@ -24,7 +24,9 @@ class Footer extends Component {
 
   async getCompliment() {
     try {
+      console.log('Compliment')
       const response = await axios.get(URL);
+      console.log(response)
       this.setState({ compliment: response.data })
     } catch (error) {
       console.error(error);
